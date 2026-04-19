@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="C:\Users\Redmi\OneDrive\Desktop\student record project\style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>Admin</h2>
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('add')">Add Student</button>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+
+<!-- Dashboard -->
+<div id="dashboard">
+  <h2>Dashboard</h2>
+
+  <div class="cards">
+    <div class="card">Total <br><span id="total">0</span></div>
+    <div class="card">Admitted <br><span id="admitted">0</span></div>
+    <div class="card">Pending <br><span id="pending">0</span></div>
+    <div class="card">Rejected <br><span id="rejected">0</span></div>
+  </div>
+
+  <input type="text" placeholder="Search..." onkeyup="search(this.value)">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Marks</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="list"></tbody>
+  </table>
+</div>
+
+<!-- Add Student -->
+<div id="add" style="display:none;">
+  <h2>Add / Edit Student</h2>
+
+  <form onsubmit="addStudent(event)">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="number" id="marks" placeholder="Marks" required>
+
+    <select id="status">
+      <option>Pending</option>
+      <option>Admitted</option>
+      <option>Rejected</option>
+    </select>
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+</div>
+
+<script src="C:\Users\Redmi\OneDrive\Desktop\student record project\script.js"></script>
+</body>
+</html>
